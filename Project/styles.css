@@ -58,7 +58,7 @@ body::-webkit-scrollbar {
   width: 100%;
   max-width: 100%;
   height: auto;
-  aspect-ratio: attr(width) / attr(height);
+  /* aspect-ratio: attr(width) / attr(height); */
 }
 .about {
   display: flex;
