@@ -1,0 +1,68 @@
+:root {
+  --global-color-text: #000000;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px; /*removes white spaces around the page*/
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.navbar-items {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+.projects {
+  color: var(--global-color-text);
+  text-decoration: none;
+}
+.projects:visited,
+.projects:hover,
+.projects:active,
+.projects:focus {
+  color: var(--global-color-text);
+}
+.about {
+  color: var(--global-color-text);
+  text-decoration: none;
+}
+.about:visited,
+.about:hover,
+.about:active,
+.about:focus {
+  color: var(--global-color-text);
+}
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+}
+.frontpage {
+  text-align: center;
+}
+.frontpage img {
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: attr(width) / attr(height);
+}
+.about {
+  display: flex;
+}
+.projects {
+  display: flex;
+}
