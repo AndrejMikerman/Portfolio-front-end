@@ -29,7 +29,9 @@ header {
 /* Title of the Page */
 .title {
   width: 100%;
-  flex-basis: 50%;
+  height: 100vh;
+  flex-basis: auto;
+  justify-content: center;
   display: flex;
   flex-flow: column;
 }
@@ -83,14 +85,22 @@ header {
   position: absolute;
   animation: name-apear 2s ease-in-out 100ms 1 reverse forwards;
 }
-
+/* /////////////////////////////////////////////////////////////////////////// */
 nav {
-  align-self: flex-end;
   flex-basis: 50%;
+  display: flex;
+  justify-content: center;
 }
+
 .my-foto {
   display: block;
   width: auto;
   height: 100vh;
   aspect-ratio: attr(width) / attr(height);
+}
+/* On screens that are 720px or less, set the background color to blue */
+@media screen and (max-width: 720px) {
+  header {
+    flex-direction: column;
+  }
 }
