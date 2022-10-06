@@ -30,21 +30,29 @@ header {
 .title {
   width: 100%;
   height: 100vh;
-  flex-basis: auto;
-  justify-content: center;
   display: flex;
+  flex-basis: 50%;
+  justify-content: center;
   flex-flow: column;
 }
 .name {
   padding: 1rem;
   font-size: 4rem;
 }
-@keyframes name-apear {
+@keyframes name-apear-left {
   from {
     left: 50%;
   }
   to {
     left: 33%;
+  }
+}
+@keyframes name-apear-right {
+  from {
+    right: 33%;
+  }
+  to {
+    right: 50%;
   }
 }
 .first-name-container {
@@ -65,7 +73,7 @@ header {
   transform: skewY(-10deg);
 }
 .first-name-background {
-  left: 33%;
+  right: 71%;
   background-color: var(--global-color-primary);
   opacity: 0.5;
 }
@@ -76,14 +84,14 @@ header {
 }
 
 .first-name {
-  left: 33%;
+  right: 50%;
   position: absolute;
-  animation: name-apear 2s ease-in-out 100ms 1 normal forwards;
+  animation: name-apear-right 2s ease-in-out 100ms 1 normal forwards;
 }
 .last-name {
   left: 50%;
   position: absolute;
-  animation: name-apear 2s ease-in-out 100ms 1 reverse forwards;
+  animation: name-apear-left 2s ease-in-out 100ms 1 reverse forwards;
 }
 /* /////////////////////////////////////////////////////////////////////////// */
 nav {
