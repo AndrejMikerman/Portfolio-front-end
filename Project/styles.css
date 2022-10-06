@@ -35,10 +35,6 @@ header {
   justify-content: center;
   flex-flow: column;
 }
-.name {
-  padding: 1rem;
-  font-size: 4rem;
-}
 @keyframes name-apear-left {
   from {
     left: 50%;
@@ -73,7 +69,8 @@ header {
   transform: skewY(-10deg);
 }
 .first-name-background {
-  right: 71%;
+  right: 50%;
+  margin-right: 4.5rem;
   background-color: var(--global-color-primary);
   opacity: 0.5;
 }
@@ -82,7 +79,10 @@ header {
   background-color: var(--global-color-secondary);
   opacity: 0.8;
 }
-
+.name {
+  padding: 1rem;
+  font-size: 4rem;
+}
 .first-name {
   right: 50%;
   position: absolute;
