@@ -4,16 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link
-      rel="stylesheet"
-      href="\node_modules\bootstrap\dist\css\bootstrap.min.css"
-    /> -->
     <link rel="stylesheet" href="styles.css" />
-    <!-- <script
-      defer
-      src="\node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"
-    ></script> -->
-
+    <script defer src="script.js"></script>
     <title>Portfolio</title>
   </head>
   <body>
@@ -32,10 +24,28 @@
         <img
           src="assets/img/portfolio template.png"
           alt="me!"
-          class="my-foto"
-          width="3456"
-          height="5184"
+          class="my-foto foto-default"
         />
+        <img
+          src="assets/img/looking-up-left.png"
+          alt="me!"
+          class="my-foto foto-left hidden"
+        />
+        <img
+          src="assets/img/looking-up.png"
+          alt="me!"
+          class="my-foto foto-up hidden"
+        />
+        <img
+          src="assets/img/looking-right.png"
+          alt="me!"
+          class="my-foto foto-right hidden"
+        />
+        <div class="button-container">
+          <button class="btn" id="left">left</button>
+          <button class="btn" id="up">up</button>
+          <button class="btn" id="right">right</button>
+        </div>
       </nav>
     </header>
     <div class="about">
