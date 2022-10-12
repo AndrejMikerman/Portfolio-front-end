@@ -3,24 +3,19 @@
   --global-color-primary-light: rgba(0, 0, 0, 0.5);
   --global-color-secondary: #a80505;
   --global-navbar-height: 4.93rem;
+  --global-headings-font-size: 2rem;
 }
 
 html {
   /* set the font size to the size of the browser */
   font-size: 100%;
+  scroll-snap-type: y proximity;
 }
 body {
+  scroll-snap-type: y mandatory;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0px; /*removes white spaces around the page*/
-  /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  margin: 0; /*removes white spaces around the page when 0*/
 }
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-/* body::-webkit-scrollbar {
-  display: none;
-} */
 header {
   display: flex;
   flex-direction: column;
@@ -28,6 +23,7 @@ header {
 }
 /* Title of the Page */
 .title {
+  scroll-snap-align: start;
   /* width: 100%; */
   height: 100vh;
   flex-basis: 50%;
@@ -95,10 +91,11 @@ header {
   animation: name-apear-left 2s ease-in-out 100ms 1 reverse forwards;
 }
 /* /////////////////////////////////////////////////////////////////////////// */
+/* Navigation */
 nav {
+  scroll-snap-align: start;
   flex-basis: 50%;
   position: relative;
-  scroll-margin: 10px;
 }
 
 .my-foto {
@@ -113,6 +110,75 @@ nav {
 }
 .hidden {
   opacity: 0;
+}
+
+/*Toolkit*/
+.toolkit {
+  margin: 300px;
+}
+.toolkit-head {
+  font-size: var(--global-headings-font-size);
+  position: relative;
+  display: inline-block;
+}
+.tool-hammer {
+  color: var(--global-color-primary);
+}
+.toolkit-head::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  display: block;
+  width: 50px;
+  height: 100%;
+  background-color: var(--global-color-secondary);
+  z-index: -2;
+  transform: skewY(-20deg);
+  transition: all 1s;
+}
+.toolkit-head:hover:after {
+  transform: skewY(0);
+  width: 13.5rem;
+  height: 15%;
+  top: 2rem;
+}
+.icons-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.icon-description {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.icon {
+  font-size: 80px;
+  cursor: pointer;
+  color: var(--global-color-secondary);
+}
+.icon {
+  /* transition: property duration timing-function delay|initial|inherit; */
+  transition: transform 0.3s ease-out;
+  z-index: 1;
+}
+.icon:hover,
+.icon:focus,
+.icon:active {
+  transform: translateY(-8px);
+  /* add a shadow */
+}
+.icon-text {
+  opacity: 0;
+  z-index: 0;
+  transform: translateY(-40px);
+  transition-property: opacity, transform;
+  transition-duration: 0.5s;
+  /* transition: transform 0.5s; */
+}
+.icon:hover + .icon-text {
+  transform: translateY(-10px);
+  opacity: 1;
 }
 
 /* On screens that are 1.090,66px or less, set the background color to blue */
