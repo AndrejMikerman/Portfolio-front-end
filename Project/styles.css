@@ -10,10 +10,8 @@
 html {
   /* set the font size to the size of the browser */
   font-size: 100%;
-  scroll-snap-type: block proximity;
 }
 body {
-  scroll-snap-type: y mandatory;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0; /*removes white spaces around the page when 0*/
 }
@@ -24,7 +22,6 @@ header {
 }
 /* Title of the Page */
 .title {
-  scroll-snap-align: start;
   /* width: 100%; */
   height: 100vh;
   flex-basis: 50%;
@@ -208,6 +205,12 @@ nav {
   }
 }
 @media screen and (max-width: 470px) {
+  /* title,
+  nav,
+  .about,
+  .toolkit {
+    scroll-snap-align: start;
+  } */
   .icon:hover,
   .icon:focus,
   .icon:active {
