@@ -94,8 +94,9 @@ header {
 /* /////////////////////////////////////////////////////////////////////////// */
 /* Navigation */
 nav {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  /* buggy on my phone */
+  /* scroll-snap-align: start;
+  scroll-snap-stop: always; */
   flex-basis: 50%;
   position: relative;
 }
