@@ -13,43 +13,37 @@
     <header>
       <div class="title">
         <div class="name first-name-container">
-          <div class="background first-name-background"></div>
+          <div class="highlight first-name-highlight"></div>
           <div class="first-name">Andrii</div>
         </div>
         <div class="name last-name-container">
-          <div class="background last-name-background"></div>
+          <div class="highlight last-name-highlight"></div>
           <div class="last-name">Ivasiuk</div>
         </div>
+        <ion-icon class="down-arrow" name="caret-down"></ion-icon>
       </div>
-      <nav>
-        <img
-          src="assets/img/portfolio-template.jpg"
-          alt="me!"
-          class="my-foto foto-default"
-        />
-        <img
-          src="assets/img/looking-up-left.png"
-          alt="me!"
-          class="my-foto foto-left hidden"
-        />
-        <img
-          src="assets/img/looking-up.png"
-          alt="me!"
-          class="my-foto foto-up hidden"
-        />
-        <img
-          src="assets/img/looking-right.png"
-          alt="me!"
-          class="my-foto foto-right hidden"
-        />
+      <nav id="navigation">
         <div class="button-container">
-          <button class="btn btn-about" id="left">left</button>
-          <button class="btn btn-projects" id="up">up</button>
-          <button class="btn btn-contact" id="right">right</button>
+          <button class="btn btn-about" data-goto="about">About Me</button>
+          <button class="btn btn-projects" data-goto="projects">
+            My Projects
+          </button>
+          <button class="btn btn-contact" data-goto="contact">
+            Contact Me
+          </button>
+        </div>
+        <div class="foto-container">
+          <img
+            src="assets/img/my-foto-logo.png"
+            alt="me!"
+            class="my-foto foto-default"
+            width="1062"
+            height="789"
+          />
         </div>
       </nav>
     </header>
-    <div class="about">
+    <div class="about" id="about">
       <span class="head about-head">
         About me
         <ion-icon name="accessibility"></ion-icon>
@@ -59,10 +53,19 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
         tempora neque sint ad! Eaque similique temporibus voluptatum illo, ipsum
         porro eligendi facere laborum quas quisquam, perspiciatis odit! Ipsum,
-        eius exercitationem.
+        eius exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Voluptate tempora neque sint ad! Eaque similique temporibus
+        voluptatum illo, ipsum porro eligendi facere laborum quas quisquam,
+        perspiciatis odit! Ipsum, eius exercitationem.Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Voluptate tempora neque sint ad! Eaque
+        similique temporibus voluptatum illo, ipsum porro eligendi facere
+        laborum quas quisquam, perspiciatis odit! Ipsum, eius
+        exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptate tempora neque sint ad! Eaque similique temporibus voluptatum
       </div>
+      <div class="background about-background"></div>
     </div>
-    <div class="toolkit">
+    <div class="toolkit" id="toolkit">
       <span class="head toolkit-head">
         My Toolkit
         <ion-icon class="tool-hammer" name="hammer"></ion-icon>
@@ -90,9 +93,12 @@
           <p class="icon-text">npm</p>
         </span>
       </div>
+      <div class="background toolkit-background"></div>
     </div>
-    <div class="projects"></div>
-    <footer></footer>
+    <div class="projects" id="projects"></div>
+    <footer id="contact">
+      <a href="#navigation">back to the top</a>
+    </footer>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"

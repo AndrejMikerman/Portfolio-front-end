@@ -1,30 +1,36 @@
 :root {
-  --global-color-primary: #000000;
-  --global-color-primary-light: rgba(0, 0, 0, 0.5);
-  --global-color-secondary: #a80505;
-  --global-navbar-height: 4.93rem;
+  --global-color-primary: #6f38c5;
+  --global-color-secondary: #87a2fb;
+  --global-color-primary-dark: #adddd0;
+  --global-color-primary-light: #eeeeee;
+  --global-padding-top: 6.25rem;
   --global-headings-font-size: 2rem;
-  --global-margin-sections: 300px;
+  --global-padding-sections: 18.75rem;
 }
-
+@font-face {
+  font-family: FuzzyBubbles;
+  src: url(assets/Fonts/Fuzzy_Bubbles/FuzzyBubbles-Regular.ttf);
+}
+@font-face {
+  font-family: Righteous;
+  src: url(assets/Fonts/Righteous/Righteous-Regular.ttf);
+}
 html {
   /* set the font size to the size of the browser */
-  font-size: 100%;
+  /* font-family: FuzzyBubbles; */
+  font-family: Righteous;
 }
 body {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0; /*removes white spaces around the page when 0*/
 }
 header {
   display: flex;
   flex-direction: column;
-  height: 200vh;
+  justify-content: flex-start;
 }
 /* Title of the Page */
 .title {
-  /* width: 100%; */
   height: 100vh;
-  flex-basis: 50%;
   display: flex;
   justify-content: center;
   flex-flow: column;
@@ -56,23 +62,21 @@ header {
   height: 4.5rem;
   position: relative;
 }
-.background {
+.highlight {
   position: absolute;
   border: 1px;
   width: 6rem;
   height: 4rem;
   transform: skewY(-10deg);
 }
-.first-name-background {
+.first-name-highlight {
   right: 50%;
   margin-right: 4.5rem;
   background-color: var(--global-color-primary);
-  opacity: 0.5;
 }
-.last-name-background {
+.last-name-highlight {
   left: 50%;
   background-color: var(--global-color-secondary);
-  opacity: 0.8;
 }
 .name {
   padding: 1rem;
@@ -88,28 +92,115 @@ header {
   position: absolute;
   animation: name-apear-left 2s ease-in-out 100ms 1 reverse forwards;
 }
+
+/* arrow */
+@keyframes bobble {
+  0% {
+    transform: translateY(-4px);
+  }
+  25% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}
+.down-arrow {
+  cursor: pointer;
+  position: absolute;
+  align-self: center;
+  padding-top: 90vh;
+  animation-name: bobble;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 /* /////////////////////////////////////////////////////////////////////////// */
 /* Navigation */
 nav {
-  /* buggy on my phone */
-  /* scroll-snap-align: start;
-  scroll-snap-stop: always; */
-  flex-basis: 50%;
+  flex-basis: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: var(--global-padding-top);
+}
+.foto-container {
+  display: flex;
+  width: 700px;
+  height: auto;
+  justify-content: center;
   position: relative;
 }
-
 .my-foto {
   width: 100%;
-  height: 100%;
   object-fit: contain;
-  position: absolute;
-  transition: opacity 0.5s ease-in-out;
 }
+.foto-frame {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 85%;
+  background-color: #87a2fb;
+  transform: skewY(10deg);
+  z-index: -1;
+}
+
 .button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--global-color-primary-light);
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+}
+.btn {
+  width: 300px;
   position: relative;
+  padding-inline: 20px;
+  padding-block: 1px;
+  border: none;
+  font-size: 2rem;
+  font-family: inherit;
+  cursor: pointer;
+  background: var(--global-color-secondary);
+  transform: perspective(1px) translateZ(0) skew(-10deg);
+  transition: color 0.3s;
+}
+.btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--global-color-primary);
+  transform: scaleX(0) skew(-10deg);
+  transform-origin: 50%;
+  transition: transform 0.3s ease-out;
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+  color: #adddd0;
+}
+.btn:hover:before,
+.btn:active:before,
+.btn:focus:before {
+  transform: scaleX(1);
 }
 .hidden {
-  opacity: 0;
+  display: none;
 }
 /* head of sections */
 .head {
@@ -120,7 +211,7 @@ nav {
   display: block;
 }
 /* highlight for the headers */
-.head::after {
+.head::before {
   position: absolute;
   content: "";
   top: 0;
@@ -129,29 +220,56 @@ nav {
   width: 3.125rem;
   height: 100%;
   background-color: var(--global-color-secondary);
-  z-index: -2;
+  z-index: -1;
   transform: skewY(-20deg);
   transition: all 0.5s;
 }
 /* About  */
 .about {
-  /* margin: 300px; */
-  margin: var(--global-margin-sections);
+  margin-inline: var(--global-padding-sections);
+  margin-block: 200px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-end;
+}
+.about-background {
+  width: 110%;
+  height: 100%;
+  top: 100px;
+}
+.toolkit-background {
+  width: 110%;
+  height: 140%;
+  top: 0;
+}
+.background {
+  position: absolute;
+  content: "";
+  transform: skewY(5deg);
+  align-self: center;
+  background-color: var(--global-color-primary-light);
+  z-index: -2;
 }
 
 /*  Toolkit  */
 .toolkit {
-  margin: var(--global-margin-sections);
+  margin-inline: var(--global-padding-sections);
+  margin-block: 200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .toolkit-head {
   display: inline-block;
 }
-.tool-hammer {
+/* .tool-hammer {
   color: var(--global-color-primary);
-}
+} */
 
 /* should happen when the section is in the middle of the page */
-.toolkit-head:hover:after {
+.toolkit-head:hover:before {
   transform: skewY(0);
   width: 13.5rem;
   height: 15%;
@@ -193,24 +311,67 @@ nav {
   transition-duration: 0.5s;
   /* transition: transform 0.5s; */
 }
-.icon:hover + .icon-text {
+.icon:hover + .icon-text,
+.icon:active + .icon-text,
+.icon:focus + .icon-text {
   transform: translateY(-10px);
   opacity: 1;
 }
+/*/////////////////////////////// Footer ////////////////////////////*/
+footer {
+  height: 50vh;
+  width: 100%;
+  background-color: #6f38c5;
+}
+/* Meadia Query */
 
-/* On screens that are 1.090,66px or less, set the background color to blue */
-@media screen and (max-width: 1120px) {
+/* 320px — 480px: Mobile devices.
+481px — 768px: iPads, Tablets.
+769px — 1024px: Small screens, laptops.
+1025px — 1200px: Desktops, large screens.
+1201px and more — Extra large screens, TV. */
+
+@media screen and (max-width: 1201px) {
+}
+@media screen and (max-width: 1025px) {
   :root {
-    --global-margin-sections: 100px;
+    --global-padding-sections: 100px;
   }
 }
-@media screen and (max-width: 470px) {
-  /* title,
-  nav,
-  .about,
-  .toolkit {
-    scroll-snap-align: start;
-  } */
+@media screen and (max-width: 769px) {
+  nav {
+    flex-direction: column;
+  }
+  .button-container {
+    width: 100vw;
+  }
+  .foto-container {
+    width: 100vw;
+  }
+  .my-foto {
+    /* width: 100%; */
+    height: 200px;
+  }
+}
+@media screen and (max-width: 481px) {
+  :root {
+    --global-padding-top: 0;
+  }
+  nav {
+    flex-direction: column;
+  }
+  .button-container {
+    order: 2;
+    width: 100vw;
+  }
+  .foto-container {
+    order: 1;
+    width: 100vw;
+  }
+  .my-foto {
+    /* width: 100%; */
+    height: 400px;
+  }
   .icon:hover,
   .icon:focus,
   .icon:active {
@@ -222,7 +383,9 @@ nav {
     transform: none;
     transition: none;
   }
-  .icon:hover + .icon-text {
+  .icon:hover + .icon-text,
+  .icon:active + .icon-text,
+  .icon:focus + .icon-text {
     transform: none;
     opacity: 1;
   }
