@@ -5,7 +5,7 @@ const buttonContainer = document.querySelector(".button-container");
 const fotos = document.querySelectorAll(".my-foto");
 const nav = document.querySelector("nav");
 const navArrow = document.querySelector(".down-arrow");
-const backToTop = document.querySelector(".back-to-top-arrow");
+const backToTop = document.querySelector(".back-to-top");
 const header = document.querySelector("header");
 const copyright = document.querySelector(".copyright");
 
