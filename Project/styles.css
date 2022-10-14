@@ -23,6 +23,7 @@ html {
 }
 body {
   margin: 0; /*removes white spaces around the page when 0*/
+  /* overflow-x: hidden; */
 }
 header {
   display: flex;
@@ -80,7 +81,6 @@ header {
   background-color: var(--global-color-secondary);
 }
 .name {
-  cursor: default;
   padding: 1rem;
   font-size: 4rem;
 }
@@ -515,6 +515,9 @@ footer::before {
 @media screen and (max-width: 481px) {
   :root {
     --global-padding-top: 0;
+  }
+  .name {
+    font-size: 3.5rem;
   }
   .button-container {
     order: 2;
