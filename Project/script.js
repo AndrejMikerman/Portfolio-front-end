@@ -34,3 +34,4 @@ copyright.textContent = `© ${
 
 // to DO
 // lazy loading
+//sections come into view when scrolling
