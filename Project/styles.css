@@ -8,8 +8,8 @@
   --global-padding-sections: 18.75rem;
 }
 @font-face {
-  font-family: FuzzyBubbles;
-  src: url(assets/Fonts/Fuzzy_Bubbles/FuzzyBubbles-Regular.ttf);
+  font-family: Nunito;
+  src: url(assets/Fonts/Nunito/Nunito-VariableFont_wght.ttf);
 }
 @font-face {
   font-family: Righteous;
@@ -36,6 +36,7 @@ header {
   display: flex;
   justify-content: center;
   flex-flow: column;
+  background-color: var(--global-color-primary);
 }
 /*Name and last Name*/
 @keyframes name-apear-left {
@@ -66,15 +67,14 @@ header {
 }
 .highlight {
   position: absolute;
-  border: 1px;
   width: 6rem;
   height: 4rem;
   transform: skewY(-10deg);
 }
 .first-name-highlight {
   right: 50%;
-  margin-right: 4.5rem;
-  background-color: var(--global-color-primary);
+  margin-right: 5rem;
+  background-color: var(--global-color-primary-light);
 }
 .last-name-highlight {
   left: 50%;
@@ -237,6 +237,12 @@ nav {
   position: relative;
   justify-content: flex-end;
 }
+.about-content {
+  /* font-weight: 400; */
+  font-family: Nunito;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
 .about-background {
   width: 110%;
   height: 100%;
@@ -272,12 +278,12 @@ nav {
 } */
 
 /* should happen when the section is in the middle of the page */
-.toolkit-head:hover:before {
+/* .toolkit-head:hover:before {
   transform: skewY(0);
   width: 13.5rem;
   height: 15%;
   top: 2rem;
-}
+} */
 .icons-container {
   display: flex;
   justify-content: space-evenly;
@@ -291,12 +297,11 @@ nav {
   cursor: default;
 }
 .icon {
-  font-size: 80px;
+  width: 80px;
+  height: 80px;
+  /* filter: invert(21%) sepia(93%) saturate(1483%) hue-rotate(246deg)
+    brightness(104%) contrast(99%); */
   cursor: pointer;
-  color: var(--global-color-primary);
-}
-.icon {
-  /* transition: property duration timing-function delay|initial|inherit; */
   transition: transform 0.3s ease-out;
   z-index: 1;
 }
@@ -518,6 +523,9 @@ footer::before {
   }
   .name {
     font-size: 3.5rem;
+  }
+  .first-name-highlight {
+    margin-right: 3.6rem;
   }
   .button-container {
     order: 2;
