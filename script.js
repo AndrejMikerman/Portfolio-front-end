@@ -8,6 +8,7 @@ const navArrow = document.querySelector(".down-arrow");
 const backToTop = document.querySelector(".back-to-top");
 const header = document.querySelector("header");
 const copyright = document.querySelector(".copyright");
+const projectsContainer = document.querySelector(".projects-container");
 
 //arrow to the nav menu
 navArrow.addEventListener("click", function () {
@@ -32,6 +33,18 @@ copyright.textContent = `© ${
   currentYear === 2022 ? "" : "2022-"
 }${currentYear} Andrii Ivasiuk 🙂`;
 
+//toogle Overlay
+projectsContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("close-overlay")) {
+    e.target.closest(".overlay").classList.add("hidden");
+  }
+  if (e.target.closest(".project")) {
+    e.target
+      .closest(".project-container")
+      .querySelector(".overlay")
+      .classList.remove("hidden");
+  }
+});
 // to DO
 // lazy loading
 //sections come into view when scrolling
