@@ -24,7 +24,7 @@ html {
 }
 body {
   margin: 0; /*removes white spaces around the page when 0*/
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 header {
   margin-bottom: 30px;
@@ -129,7 +129,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: var(--global-padding-top);
+  padding-top: 40px;
 }
 .foto-container {
   display: flex;
@@ -488,7 +488,8 @@ footer::before {
 }
 .hidden-section {
   opacity: 0;
-  transform: translateX(8rem);
+  top: -8rem;
+  transform: translateY(8rem);
 }
 section {
   transition: transform var(--global-transition-duration),
