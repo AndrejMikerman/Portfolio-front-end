@@ -6,6 +6,7 @@
   --global-padding-top: 6.25rem;
   --global-headings-font-size: 2rem;
   --global-margin-sections: 18.75rem;
+  --global-transition-duration: 1s;
 }
 @font-face {
   font-family: Nunito;
@@ -23,12 +24,10 @@ html {
 }
 body {
   margin: 0; /*removes white spaces around the page when 0*/
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 header {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  margin-bottom: 30px;
 }
 /* Title of the Page */
 .title {
@@ -125,7 +124,7 @@ header {
   animation-direction: alternate;
 }
 /* /////////////////////////////////// Navigation //////////////////////////////////////// */
-nav {
+#navigation {
   flex-basis: auto;
   display: flex;
   justify-content: space-around;
@@ -240,7 +239,7 @@ nav {
 }
 .projects-background {
   width: 110%;
-  height: 120%;
+  height: 110%;
   top: 0;
 }
 .background {
@@ -333,6 +332,7 @@ nav {
 /* ////////////////////////////////////////////////Projects//////////////////////////////////////////////// */
 .projects {
   margin: var(--global-margin-sections);
+  padding-top: 50px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -486,7 +486,15 @@ footer::before {
 .hidden {
   display: none;
 }
-/* Meadia Query */
+.hidden-section {
+  opacity: 0;
+  transform: translateX(8rem);
+}
+section {
+  transition: transform var(--global-transition-duration),
+    opacity var(--global-transition-duration);
+}
+/*/////////////////////////////// Media Query /////////////////////////*/
 
 /* 320px — 480px: Mobile devices.
 481px — 768px: iPads, Tablets.
@@ -498,7 +506,7 @@ footer::before {
   :root {
     --global-margin-sections: 7rem;
   }
-  nav {
+  #navigation {
     flex-direction: column;
   }
   .button-container {
@@ -517,7 +525,7 @@ footer::before {
   :root {
     --global-margin-sections: 100px;
   }
-  nav {
+  #navigation {
     flex-direction: column;
   }
   .button-container {

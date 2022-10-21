@@ -22,28 +22,24 @@
         </div>
         <ion-icon class="down-arrow" name="caret-down"></ion-icon>
       </div>
-      <nav id="navigation">
-        <div class="button-container">
-          <button class="btn btn-about" data-goto="about">About Me</button>
-          <button class="btn btn-projects" data-goto="projects">
-            My Projects
-          </button>
-          <button class="btn btn-contact" data-goto="contact">
-            Contact Me
-          </button>
-        </div>
-        <div class="foto-container">
-          <img
-            src="assets/img/my-foto-logo.png"
-            alt="me!"
-            class="my-foto foto-default"
-            width="1062"
-            height="789"
-          />
-        </div>
-      </nav>
     </header>
-    <div class="about" id="about">
+    <section id="navigation">
+      <div class="button-container">
+        <button class="btn btn-about" data-goto="about">About Me</button>
+        <button class="btn btn-projects" data-goto="projects">Projects</button>
+        <button class="btn btn-contact" data-goto="contact">Contact Me</button>
+      </div>
+      <div class="foto-container">
+        <img
+          src="assets/img/my-foto-logo.png"
+          alt="me!"
+          class="my-foto foto-default"
+          width="1062"
+          height="789"
+        />
+      </div>
+    </section>
+    <section class="about" id="about">
       <span class="head about-head">
         About me
         <ion-icon name="accessibility"></ion-icon>
@@ -64,8 +60,8 @@
         Voluptate tempora neque sint ad! Eaque similique temporibus voluptatum
       </p>
       <div class="background about-background"></div>
-    </div>
-    <div class="toolkit" id="toolkit">
+    </section>
+    <section class="toolkit" id="toolkit">
       <span class="head toolkit-head">
         My Toolkit
         <ion-icon class="tool-hammer" name="hammer"></ion-icon>
@@ -106,19 +102,15 @@
         </span>
       </div>
       <div class="background toolkit-background"></div>
-    </div>
-    <div class="projects" id="projects">
+    </section>
+    <section class="projects" id="projects">
       <span class="head projects-head">Projects</span>
       <div class="projects-container">
         <div class="project-container">
           <div class="project">
-            <img
-              src="assets/img/Project-sample.png"
-              alt=""
-              class="project-img"
-            />
+            <img src="assets/img/dom-bankist.png" alt="" class="project-img" />
           </div>
-          <div class="overlay">
+          <div class="overlay hidden">
             <div class="project-details">
               <p class="project-description">
                 In this Project I learned interessting DOM manipulation technics
@@ -127,25 +119,35 @@
             <ion-icon class="close-overlay" name="close"></ion-icon>
           </div>
         </div>
-        <!-- <div class="project-container">
+        <div class="project-container">
           <div class="project">
-            <h3>12323 Test 12345</h3>
+            <img src="assets/img/forkify.png" alt="" class="project-img" />
           </div>
-          <div class="overlay">
+          <div class="overlay hidden">
+            <div class="project-details">
+              <p class="project-description">
+                In this Project I learned interessting DOM manipulation technics
+              </p>
+            </div>
             <ion-icon class="close-overlay" name="close"></ion-icon>
           </div>
         </div>
         <div class="project-container">
           <div class="project">
-            <h3>12323 Test 12345</h3>
+            <img src="assets/img/mapty.png" alt="" class="project-img" />
           </div>
           <div class="overlay hidden">
+            <div class="project-details">
+              <p class="project-description">
+                In this Project I learned interessting DOM manipulation technics
+              </p>
+            </div>
             <ion-icon class="close-overlay" name="close"></ion-icon>
           </div>
-        </div> -->
+        </div>
       </div>
       <div class="background projects-background"></div>
-    </div>
+    </section>
     <footer id="contact">
       <span class="footer-text">
         <h3>Contact Me</h3>

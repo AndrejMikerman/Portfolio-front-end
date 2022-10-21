@@ -2,13 +2,13 @@
 
 //Dom Elements
 const buttonContainer = document.querySelector(".button-container");
-const fotos = document.querySelectorAll(".my-foto");
-const nav = document.querySelector("nav");
+const nav = document.getElementById("navigation");
 const navArrow = document.querySelector(".down-arrow");
 const backToTop = document.querySelector(".back-to-top");
 const header = document.querySelector("header");
 const copyright = document.querySelector(".copyright");
 const projectsContainer = document.querySelector(".projects-container");
+const sections = document.querySelectorAll("section");
 
 //arrow to the nav menu
 navArrow.addEventListener("click", function () {
@@ -45,6 +45,24 @@ projectsContainer.addEventListener("click", function (e) {
       .classList.remove("hidden");
   }
 });
+//revelal sections
+const reveal = function (entries, observer) {
+  console.log(entries);
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("hidden-section");
+  observer.unobserve(entry.target);
+};
+const options = {
+  root: null,
+  treshold: 0,
+};
+const intersectionObserver = new IntersectionObserver(reveal, options);
+
+sections.forEach(function (section) {
+  intersectionObserver.observe(section);
+  section.classList.add("hidden-section");
+});
+
 // to DO
-// lazy loading
 //sections come into view when scrolling
