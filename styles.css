@@ -222,7 +222,6 @@ header {
   background-color: var(--global-color-secondary);
   z-index: -1;
   transform: skewY(-20deg);
-  /* transition: all 0.5s; */
 }
 .about-head::before {
   width: 2.6rem;
@@ -309,8 +308,6 @@ header {
 .icon {
   width: 80px;
   height: 80px;
-  /* filter: invert(21%) sepia(93%) saturate(1483%) hue-rotate(246deg)
-    brightness(104%) contrast(99%); */
   cursor: pointer;
   transition: transform 0.3s ease-out;
   z-index: 1;
@@ -319,7 +316,6 @@ header {
 .icon:focus,
 .icon:active {
   transform: translateY(-8px);
-  /* add a shadow */
 }
 .icon-text {
   opacity: 0;
@@ -327,7 +323,6 @@ header {
   transform: translateY(-40px);
   transition-property: opacity, transform;
   transition-duration: 0.5s;
-  /* transition: transform 0.5s; */
 }
 .icon:hover + .icon-text,
 .icon:active + .icon-text,
@@ -500,6 +495,8 @@ footer::before {
   transform: translateY(8rem);
 }
 section {
+  -webkit-transition: transform var(--global-transition-duration),
+    opacity var(--global-transition-duration);
   transition: transform var(--global-transition-duration),
     opacity var(--global-transition-duration);
 }
