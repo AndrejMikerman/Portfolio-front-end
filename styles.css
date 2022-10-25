@@ -20,7 +20,6 @@ html {
   /* set the font size to the size of the browser */
   /* font-family: FuzzyBubbles; */
   font-family: Righteous;
-  user-select: none;
 }
 body {
   margin: 0; /*removes white spaces around the page when 0*/
@@ -31,6 +30,7 @@ header {
 }
 /* Title of the Page */
 .title {
+  user-select: none;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -113,7 +113,9 @@ header {
   }
 }
 .down-arrow {
-  font-size: 32px;
+  /* font-size: 32px; */
+  width: 32px;
+  height: 32px;
   cursor: pointer;
   position: absolute;
   align-self: center;
@@ -266,6 +268,10 @@ header {
   font-weight: 400;
   font-size: 1.3rem;
 }
+.about-icon {
+  width: 2rem;
+  height: 2rem;
+}
 /* ////////////////////////////////////////////////Toolkit//////////////////////////////////////////////// */
 .toolkit {
   margin-inline: var(--global-margin-sections);
@@ -277,9 +283,10 @@ header {
 .toolkit-head {
   display: inline-block;
 }
-/* .tool-hammer {
-  color: var(--global-color-primary);
-} */
+.tool-hammer {
+  width: 2rem;
+  height: 2rem;
+}
 
 /* should happen when the section is in the middle of the page */
 /* .toolkit-head:hover:before {
@@ -376,8 +383,8 @@ header {
   grid-template-rows: 64px 1fr 64px;
 }
 .close-overlay {
-  font-size: 64px;
-  color: var(--global-color-primary-light);
+  width: 64px;
+  height: 64px;
   display: block;
   grid-column-start: 3;
   grid-row-start: 1;
@@ -436,7 +443,9 @@ footer::before {
   color: black;
 }
 .contact-me-logo {
-  font-size: 32px;
+  /* font-size: 32px; */
+  width: 32px;
+  height: 32px;
 }
 .copyright {
   grid-column: 2 / span 2;
@@ -466,8 +475,8 @@ footer::before {
   margin: 0;
 }
 .back-to-top-arrow {
-  color: var(--global-color-primary-dark);
-  font-size: 40px;
+  width: 40px;
+  height: 40px;
 }
 .back-to-top:hover {
   transform: scale(130%);
@@ -568,7 +577,6 @@ section {
     width: 100vw;
   }
   .my-foto {
-    /* width: 100%; */
     height: 200px;
   }
   .toolkit {
@@ -584,7 +592,8 @@ section {
     display: none;
   }
   .back-to-top-arrow {
-    font-size: 64px;
+    width: 64px;
+    height: 64px;
     animation: bobble 0.5s ease-out 0s infinite alternate;
   }
   .back-to-top:hover .back-to-top-arrow {
