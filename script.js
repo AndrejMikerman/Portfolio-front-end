@@ -47,7 +47,6 @@ projectsContainer.addEventListener("click", function (e) {
 });
 //revelal sections
 const reveal = function (entries, observer) {
-  console.log(entries);
   const [entry] = entries;
   if (!entry.isIntersecting) return;
   entry.target.classList.remove("hidden-section");

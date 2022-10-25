@@ -113,13 +113,12 @@ header {
   }
 }
 .down-arrow {
-  /* font-size: 32px; */
   width: 32px;
   height: 32px;
   cursor: pointer;
   position: absolute;
   align-self: center;
-  margin-top: 90vh;
+  bottom: 20px;
   animation-name: bobble;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
