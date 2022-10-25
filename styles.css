@@ -10,11 +10,11 @@
 }
 @font-face {
   font-family: Nunito;
-  src: url(assets/Fonts/Nunito/Nunito-VariableFont_wght.ttf);
+  src: url(/assets/Fonts/Nunito/Nunito-VariableFont_wght.ttf);
 }
 @font-face {
   font-family: Righteous;
-  src: url(assets/Fonts/Righteous/Righteous-Regular.ttf);
+  src: url(/assets/Fonts/Righteous/Righteous-Regular.ttf);
 }
 html {
   /* set the font size to the size of the browser */
