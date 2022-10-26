@@ -63,5 +63,9 @@ sections.forEach(function (section) {
   section.classList.add("hidden-section");
 });
 
+//scroll the page always to the top when reloading
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
 // to DO
 //sections come into view when scrolling
